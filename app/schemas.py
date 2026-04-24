@@ -3,6 +3,7 @@ from __future__ import annotations
 from datetime import date, datetime
 
 from pydantic import BaseModel, Field
+from pydantic.config import ConfigDict
 
 
 class PlaceCreate(BaseModel):
@@ -16,6 +17,8 @@ class PlaceUpdate(BaseModel):
 
 
 class PlaceOut(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
     id: int
     project_id: int
     external_id: str
@@ -41,6 +44,8 @@ class ProjectUpdate(BaseModel):
 
 
 class ProjectOut(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
     id: int
     name: str
     description: str | None

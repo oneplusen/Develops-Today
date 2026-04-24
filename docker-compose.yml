@@ -1,0 +1,12 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=sqlite:////app/travel_planner.db
+    volumes:
+      - travel_planner_data:/app
+
+volumes:
+  travel_planner_data:
