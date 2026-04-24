@@ -4,9 +4,9 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - DATABASE_URL=sqlite:////app/travel_planner.db
+      - DATABASE_URL=sqlite:////data/travel_planner.db
     volumes:
-      - travel_planner_data:/app
+      - travel_planner_data:/data
 
 volumes:
   travel_planner_data:
